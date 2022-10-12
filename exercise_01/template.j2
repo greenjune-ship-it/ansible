@@ -1,0 +1,12 @@
+# The first line of generated config
+{% if item == "4.2.1" -%}
+module load R/{{ item }}-foss-2021b
+{% elif item == "4.2.0" -%}
+module load R/{{ item }}-foss-2021b
+module load libssh/0.9.6-GCCcore-11.2.0  # for 'ssh' R package
+module load PostgreSQL/13.4-GCCcore-11.2.0  # for connection the latest psql version
+{% else -%}
+module load R/{{ item }}-foss-2018a
+module load cURL/7.59.0-GCCcore-6.4.0  # for S3 Bucket
+{%- endif %}
+module load proxy

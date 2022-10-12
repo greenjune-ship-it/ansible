@@ -1,0 +1,13 @@
+---
+  - name: Sandbox for generating config from templates
+    hosts: all
+    connection: local
+    vars:
+      versions: ['3.5.1', '3.6.3', '4.2.0', '4.2.1']
+    tasks:
+      - name: Use template
+        template:
+          src: "template.j2"
+          dest: "/full/path/to/result-{{ item }}.txt"
+        with_items:
+          - "{{ versions }}"
