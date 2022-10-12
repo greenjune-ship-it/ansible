@@ -8,5 +8,5 @@ module load PostgreSQL/13.4-GCCcore-11.2.0  # for connection the latest psql ver
 {% else -%}
 module load R/{{ item }}-foss-2018a
 module load cURL/7.59.0-GCCcore-6.4.0  # for S3 Bucket
-{%- endif %}
+{% endif -%}
 module load proxy
