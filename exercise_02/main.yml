@@ -1,0 +1,13 @@
+---
+  - name: Sandbox for replacing string by search pattern
+    hosts: all
+    connection: local
+    vars:
+      - search_pattern: '\-c "\$VSCODE_EXEC_COMMAND'
+      - module_to_load: 'module load R/4.2.1-foss-2021b'
+    tasks:
+      - name: Use replace value in file
+        replace:
+          path: example.txt
+          regexp: '{{ search_pattern }}'
+          replace: '-c "{{ module_to_load }} $VSCODE_EXEC_COMMAND'

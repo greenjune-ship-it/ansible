@@ -1,0 +1,2 @@
+My example file where string should be replaced
+/bin/bash --login $VSCODE_PROFILE_OPTIONS -c "$VSCODE_EXEC_COMMAND $VSCODE_ARGS"
